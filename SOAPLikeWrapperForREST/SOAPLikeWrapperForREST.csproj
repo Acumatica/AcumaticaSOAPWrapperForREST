@@ -9,8 +9,8 @@
 	<Product>Acumatica.$(AssemblyName)</Product>
 	<Description>A C# wrapper allowing to write SOAP-like queries for Acuamtica REST API</Description>
 	<Copyright>Acumatica</Copyright>
-	<PackageProjectUrl>https://github.com/dnaumov/AcumaticaSOAPWrapperForREST</PackageProjectUrl>
-	<RepositoryUrl>https://github.com/dnaumov/AcumaticaSOAPWrapperForREST</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/Acumatica/AcumaticaSOAPWrapperForREST</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/Acumatica/AcumaticaSOAPWrapperForREST</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageReleaseNotes>Removed misleading paramter from Get Method</PackageReleaseNotes>
