@@ -3,14 +3,14 @@
   <PropertyGroup>
 	<TargetFramework>netstandard2.0</TargetFramework>
 	<PackageId>Acumatica.$(AssemblyName)</PackageId>
-	<Version>5.0.3-alpha</Version>
+	<Version>5.4.0</Version>
 	<Company>Acumatica</Company>
 	<Authors>Dmitrii-Naumov</Authors>
 	<Product>Acumatica.$(AssemblyName)</Product>
 	<Description>A C# wrapper allowing to write SOAP-like queries for Acuamtica REST API</Description>
 	<Copyright>Acumatica</Copyright>
-	<PackageProjectUrl>https://github.com/Acumatica/AcumaticaSOAPWrapperForREST</PackageProjectUrl>
-	<RepositoryUrl>https://github.com/Acumatica/AcumaticaSOAPWrapperForREST</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/dnaumov/AcumaticaSOAPWrapperForREST</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/dnaumov/AcumaticaSOAPWrapperForREST</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageReleaseNotes>Removed misleading paramter from Get Method</PackageReleaseNotes>
@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acumatica.RESTClient" Version="5.0.3-alpha" />
-    <PackageReference Include="Acumatica.RESTClient.ContractBasedApi" Version="5.0.3-alpha" />
+    <PackageReference Include="Acumatica.RESTClient" Version="5.4.0" />
+    <PackageReference Include="Acumatica.RESTClient.ContractBasedApi" Version="5.3.0" />
   </ItemGroup>
 
 </Project>

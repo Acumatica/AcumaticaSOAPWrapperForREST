@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-
-using Acumatica.RESTClient.Client;
-
-using SOAPLikeWrapperForREST.Helpers;
 using System.Net.Http;
-using static Acumatica.RESTClient.AuthApi.AuthApiExtensions;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+
 using Acumatica.RESTClient.AuthApi.Model;
+using Acumatica.RESTClient.Client;
+using Acumatica.RESTClient.ContractBasedApi;
 using Acumatica.RESTClient.ContractBasedApi.Model;
 using Acumatica.RESTClient.FileApi;
-using Acumatica.RESTClient.ContractBasedApi;
-using System.Threading.Tasks;
+
+using SOAPLikeWrapperForREST.Helpers;
+
+using static Acumatica.RESTClient.AuthApi.AuthApiExtensions;
 
 [assembly: InternalsVisibleTo("SOAPWrapperTests")]
 
@@ -44,9 +45,14 @@ namespace SOAPLikeWrapperForREST
             string endpointPath, 
             int timeout = 10000, 
             Action<HttpRequestMessage> requestInterceptor = null, 
-            Action<HttpResponseMessage> responseInterceptor = null)
+            Action<HttpResponseMessage> responseInterceptor = null,
+            bool ignoreSslErrors = false)
         {
-            Client = new ApiClient(siteURL, timeout, requestInterceptor, responseInterceptor);
+            Client = new ApiClient(siteURL, 
+                timeout: timeout, 
+                ignoreSslErrors: ignoreSslErrors,
+                requestInterceptor: requestInterceptor,
+                responseInterceptor: responseInterceptor);
             ProcessStartTime = new Dictionary<string, DateTime>();
             Timeout = timeout;
             if (!endpointPath.StartsWith("entity"))
@@ -135,12 +141,20 @@ namespace SOAPLikeWrapperForREST
         public T GetById<T>(Guid? id, string select = null, string filter = null, string expand = null, string custom = null)
             where T : Entity, ITopLevelEntity, new()
         {
-            return Client.GetById<T>(id, EndpointPath, select, filter, expand, custom);
+            return Client.GetById<T>(id, 
+                endpointPath: EndpointPath, 
+                select: select, 
+                expand: expand, 
+                custom: custom);
         }
         public T GetByKeys<T>(IEnumerable<string> ids, string select = null, string filter = null, string expand = null, string custom = null)
             where T : Entity, ITopLevelEntity, new()
         {
-            return Client.GetByKeys<T>(ids, EndpointPath, select, filter, expand, custom);
+            return Client.GetByKeys<T>(ids, 
+                 endpointPath: EndpointPath,
+                 select: select, 
+                 expand: expand,
+                 custom: custom);
         }
 
         /// <summary>
@@ -157,7 +171,6 @@ namespace SOAPLikeWrapperForREST
         {
             T result = Client.GetById<T>(GetRecordIDViaGetListAsync(entity).Result,
                 EndpointPath,
-                filter: ComposeFilters(entity),
                 expand: ComposeExpands(entity),
                 custom: ComposeCustomParameters(entity),
                 select: ComposeSelects(entity)
@@ -249,7 +262,7 @@ namespace SOAPLikeWrapperForREST
             {
                 filesArray[i] = new File();
                 filesArray[i].Name = record.Files[i].Filename;
-                using (var sourceStream = FileApi.GetFile(Client, record.Files[i]))
+                using (var sourceStream = Client.GetFile(record.Files[i]))
                 {
                     using (var memoryStream = new MemoryStream())
                     {

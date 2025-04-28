@@ -13,7 +13,7 @@ namespace SOAPWrapperTests
             {
                 CustomFields = new CustomField[]
                  {
-                    new CustomDecimalField {viewName = "TestView", fieldName = "TestField"},
+                    new CustomDecimalField {ViewName = "TestView", FieldName = "TestField"},
                  }
             };
             CustomFieldsHelper.ComposeCustomParameter(testEntity)
@@ -30,7 +30,7 @@ namespace SOAPWrapperTests
                     {
                          CustomFields = new CustomField[]
                          {
-                            new CustomDecimalField {viewName = "TestView", fieldName = "TestField"},
+                            new CustomDecimalField {ViewName = "TestView", FieldName = "TestField"},
                          }
                     }
                 }
@@ -45,7 +45,7 @@ namespace SOAPWrapperTests
             {
                 CustomFields = new CustomField[]
                 {
-                    new CustomDecimalField {viewName = "TestView0", fieldName = "TestField0"},
+                    new CustomDecimalField {ViewName = "TestView0", FieldName = "TestField0"},
                 },
                 DetailEntity1 = new List<TestEntityWithoutDetails>()
                 {
@@ -53,7 +53,7 @@ namespace SOAPWrapperTests
                     {
                          CustomFields = new CustomField[]
                          {
-                            new CustomDecimalField {viewName = "TestView1", fieldName = "TestField1"},
+                            new CustomDecimalField {ViewName = "TestView1", FieldName = "TestField1"},
                          }
                     },
 
@@ -61,8 +61,8 @@ namespace SOAPWrapperTests
                     {
                          CustomFields = new CustomField[]
                          {
-                            new CustomStringField {viewName = "TestView2", fieldName = "TestField2"},
-                            new CustomIntField {viewName = "TestView3", fieldName = "TestField3"},
+                            new CustomStringField {ViewName = "TestView2", FieldName = "TestField2"},
+                            new CustomIntField {ViewName = "TestView3", FieldName = "TestField3"},
                          }
                     }
                 },
@@ -72,7 +72,7 @@ namespace SOAPWrapperTests
                     {
                          CustomFields = new CustomField[]
                          {
-                            new CustomDecimalField {viewName = "TestView4", fieldName = "TestField4"},
+                            new CustomDecimalField {ViewName = "TestView4", FieldName = "TestField4"},
                          }
                     }
                 }

@@ -6,6 +6,8 @@ using Acumatica.RESTClient.ContractBasedApi.Model;
 
 using SOAPLikeWrapperForREST;
 
+using CustomStringField = SOAPLikeWrapperForREST.CustomStringField;
+
 namespace AcumaticaSoapLikeApiExample
 {
     public class SOAPLikeExample

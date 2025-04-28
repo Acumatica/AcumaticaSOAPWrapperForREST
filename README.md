@@ -1,6 +1,6 @@
 # Acumatica SOAP-Like wrapper For REST API Client for C#
 
-[![NuGet](https://buildstats.info/nuget/Acumatica.SOAPLikeWrapperForREST)](https://www.nuget.org/packages/Acumatica.SOAPLikeWrapperForREST/)
+[![NuGet(Acumatica.SOAPLikeWrapperForREST)](https://img.shields.io/nuget/v/Acumatica.SOAPLikeWrapperForREST.svg?style=flat-square)](https://www.nuget.org/packages/Acumatica.SOAPLikeWrapperForREST/)
 
 The solution allows to easily migrate existing SOAP API C# code to REST API based integration with Acumatica ERP. 
 
@@ -12,8 +12,7 @@ The Acumatica SOAP-Like wrapper For REST is available as a Nuget package:
 * https://www.nuget.org/packages/Acumatica.SOAPLikeWrapperForREST/
 
 Dependencies:
-* Acumatica.RESTClient (>= 5.0.1)
-(see https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp)
+* https://github.com/Acumatica/AcumaticaRESTAPIClientForCSharp
 
 
 
