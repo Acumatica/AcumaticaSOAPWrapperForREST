@@ -15,7 +15,7 @@ namespace AcumaticaSoapLikeApiExample
 		{
             Console.WriteLine("SOAP-like example");
             SOAPLikeExample.ExampleMethod(SiteURL, Username, Password, Tenant, Branch, Locale);
-
+            SOAPLikeExample2.ExampleMethod(SiteURL, Username, Password, Tenant, Branch, Locale);
 			Console.ReadLine();
 		}
 
