@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Acumatica.Default_22_200_001.Model;
 using Acumatica.RESTClient.ContractBasedApi.Model;
+using Acumatica.RESTClient.Loggers;
 
 using SOAPLikeWrapperForREST;
 
@@ -15,8 +16,8 @@ namespace AcumaticaSoapLikeApiExample
         public static void ExampleMethod(string siteURL, string username, string password, string tenant = null, string branch = null, string locale = null)
         {
             var client = new SOAPLikeClient(siteURL,
-                requestInterceptor: RequestConsoleLogger.LogRequest,
-                responseInterceptor: RequestConsoleLogger.LogResponse);
+                requestInterceptor: ConsoleRequestLogger.LogRequest,
+                responseInterceptor: ConsoleRequestLogger.LogResponse);
 
             try
             {

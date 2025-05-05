@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acumatica.Default_22.200.001" Version="5.0.0-alpha" />
+    <PackageReference Include="Acumatica.Default_22.200.001" Version="5.3.0" />
+    <PackageReference Include="Acumatica.RESTClient.Loggers" Version="1.0.0" />
     <PackageReference Include="Acumatica.SOAPLikeWrapperForREST" Version="5.0.3-alpha" />
   </ItemGroup>
 
