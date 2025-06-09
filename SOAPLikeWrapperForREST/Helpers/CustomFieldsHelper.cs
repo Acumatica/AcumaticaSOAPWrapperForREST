@@ -44,7 +44,7 @@ namespace SOAPLikeWrapperForREST.Helpers
 
         private static IEnumerable<string> CollectCustomFieldNames(Entity entity)
         {
-            if (entity.Custom != null)
+            if (entity?.Custom != null)
             {
                 foreach (var view in entity.Custom)
                 {
