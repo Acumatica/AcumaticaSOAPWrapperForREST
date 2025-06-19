@@ -3,7 +3,7 @@
   <PropertyGroup>
 	<TargetFramework>netstandard2.0</TargetFramework>
 	<PackageId>Acumatica.$(AssemblyName)</PackageId>
-	<Version>5.4.0</Version>
+	<Version>5.5.1-test</Version>
 	<Company>Acumatica</Company>
 	<Authors>Dmitrii-Naumov</Authors>
 	<Product>Acumatica.$(AssemblyName)</Product>
@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acumatica.RESTClient" Version="5.4.0" />
-    <PackageReference Include="Acumatica.RESTClient.ContractBasedApi" Version="5.3.0" />
+    <PackageReference Include="Acumatica.RESTClient" Version="5.5.1-test" />
+    <PackageReference Include="Acumatica.RESTClient.ContractBasedApi" Version="5.5.1-test" />
   </ItemGroup>
 
 </Project>
